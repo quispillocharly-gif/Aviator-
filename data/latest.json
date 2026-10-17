@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-17T19:46:30.160034+00:00",
+  "retrievedAt": "2026-10-17T19:50:14.112474+00:00",
   "source": "https://clashwatchdog.com/data",
   "summary": {
     "data": {
@@ -18,23 +18,23 @@
       },
       "status": "measured",
       "measurement": {
-        "rounds": 45382,
-        "rtp": 0.9621876514917809,
+        "rounds": 45355,
+        "rtp": 0.9620989968029986,
         "ci95": [
-          0.9529935700387893,
-          0.9713817329447725
+          0.9529022099717707,
+          0.9712957836342265
         ],
         "quantiles": {
           "p50": 1.92,
           "p90": 9.46,
-          "p99": 98.2357
+          "p99": 98.176
         },
-        "asOf": "2026-10-17T19:43:16Z",
+        "asOf": "2026-10-17T19:33:16Z",
         "synthetic": false,
         "methodologyVersion": "crashlab-v1",
         "label": "Observed RTP @ 2x (fixed cash-out)"
       },
-      "lastRoundAt": "2026-10-17T19:41:23Z",
+      "lastRoundAt": "2026-10-17T19:31:35Z",
       "methodologyVersion": "lab-v2.0",
       "pageUrl": "https://clashwatchdog.com/games/aviator"
     },
@@ -49,6 +49,91 @@
       "game": "aviator",
       "status": "measured",
       "lastRoundAt": "2026-10-17T19:41:23Z"
+    },
+    "meta": {
+      "methodologyVersion": "lab-v2.0",
+      "license": "CC BY 4.0",
+      "disclaimer": "Measurements describe past rounds. Nothing here predicts future rounds."
+    }
+  },
+  "datasets": {
+    "data": {
+      "game": "aviator",
+      "status": "ok",
+      "asOf": "2026-10-17T19:08:52Z",
+      "fingerprints": [
+        {
+          "game": "aviator",
+          "date": "2026-10-16",
+          "rows": 4141,
+          "sha256": "1a972e821671bcbdf8fa16b27b1769462e63e444416f01a6d0d58c064c0d45a6"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-15",
+          "rows": 4092,
+          "sha256": "74144b51104991f843656fbbf861e44fa23adc3b29a53125375afab32bb5ad16"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-14",
+          "rows": 4141,
+          "sha256": "ec37347f47ea41bb2d3c2c894a3f64bde95a1a3feb00d731c230814571a22ca0"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-13",
+          "rows": 4100,
+          "sha256": "b798e806926fdc94e5880088865cde2567744652b7b0ef40eafadc7bee32af6d"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-12",
+          "rows": 4094,
+          "sha256": "1e4efd4891c3ed11acc6fc33902fbf793d797e17ddcf8952d28f29fa7c18bb58"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-11",
+          "rows": 4123,
+          "sha256": "dd11d0fc7c25a5722d71750db47b57fc9bac7727c942a90de3e2b6a5942b586d"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-10",
+          "rows": 4135,
+          "sha256": "8ad25a18b5214dae4eb4198877ada93ec76e751cd66b54962c5cd25109956421"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-09",
+          "rows": 4135,
+          "sha256": "9e59e948ebe6850816b8ee9b911d78e702a6538bee34fbf627ba9607c445e7e2"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-08",
+          "rows": 4151,
+          "sha256": "f8b44a720694547673eb9240c89f73858f88bbc058e41e4bb82496e7785262c9"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-07",
+          "rows": 3983,
+          "sha256": "7c1ce86c6e1e4a503e5c4f5c7a1dbbfa6903d862dee77323c7c09925cf0bf149"
+        },
+        {
+          "game": "aviator",
+          "date": "2026-10-06",
+          "rows": 884,
+          "sha256": "18d9cd0805b9be71f17d89f5293a85b604b77be713ba1d485c20f0bda67c18c9"
+        }
+      ],
+      "rawRows": {
+        "downloadable": false,
+        "note": "Raw per-round rows are not published. Raw rows are released on request to logged-in users through the data page (Telegram login), up to 5 requests in any 24 hours; a file sent for a day matches the SHA-256 listed here.",
+        "url": "https://clashwatchdog.com/data#raw-data"
+      }
     },
     "meta": {
       "methodologyVersion": "lab-v2.0",
