@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#081326"><meta name="description" content="ORBIT Aviator: estadísticas públicas de Aviator que se actualizan automáticamente. Sin carga de archivos ni apuestas.">
-<title>ORBIT · Aviator Analytics</title>
+<title>ORBIT · Auditoría Aviator</title>
 <style>
 :root{color-scheme:dark;--bg:#081326;--panel:#101e36;--panel2:#162743;--edge:#293c5b;--ink:#f1f7ff;--dim:#97aac9;--mint:#63f2c2;--blue:#57b8fb;--gold:#ffcf85;--pink:#d99cff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% -20%,#203b65 0%,transparent 46%),radial-gradient(ellipse at 100% 17%,#1b2750 0%,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}a{color:var(--blue)}button{font:inherit}.container{max-width:1090px;margin:auto;padding:20px 17px 72px}.top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.mark{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#4fe3c7,#6a9bff);box-shadow:0 8px 35px #48a6d53d;color:#071729;font-size:24px;transform:rotate(-4deg)}.brand strong{font-size:21px;letter-spacing:.12em}.brand small{display:block;color:var(--dim);font-size:10px;letter-spacing:.21em;margin-top:2px}.live{font-size:11px;letter-spacing:.07em;color:#c1d4ee;display:flex;align-items:center;gap:7px;border:1px solid var(--edge);padding:9px 11px;border-radius:25px;background:#0f1e34}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#96a9c1}.dot.ok{background:var(--mint);box-shadow:0 0 0 5px #50f2bf20}.dot.error{background:#ffa6a6}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:end;margin-bottom:20px}.eyebrow{color:var(--mint);font-size:11px;text-transform:uppercase;letter-spacing:.21em;font-weight:750}.hero h1{font-size:clamp(30px,5.8vw,55px);margin:10px 0 12px;line-height:1.09;letter-spacing:-.04em}.hero h1 em{color:var(--mint);font-style:normal}.sub{font-size:14px;line-height:1.65;color:var(--dim);max-width:580px;margin:0}.hero-side{border:1px solid var(--edge);border-radius:18px;padding:18px;background:#12223a}.side-title{font-size:11px;letter-spacing:.17em;color:var(--dim);font-weight:700}.big-value{font-size:31px;font-weight:780;margin:7px 0 0;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.side-caption{font-size:12px;color:var(--dim);line-height:1.5}.data-status{display:flex;align-items:center;gap:9px;border:1px solid var(--edge);padding:11px 14px;border-radius:14px;background:#111f36;font-size:12px;color:#b5c7df;margin-bottom:20px}.data-status strong{color:#f1f7ff}.rotate{animation:rotate 1s linear infinite}@keyframes rotate{to{transform:rotate(360deg)}}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{border:1px solid var(--edge);border-radius:17px;background:linear-gradient(155deg,#192c49,#102039);padding:17px;min-height:132px}.metric .label{color:#a9bdd9;font-size:11px;font-weight:630;letter-spacing:.05em}.metric .value{font-size:clamp(21px,2.9vw,30px);font-weight:800;margin:16px 0 7px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.metric .note{font-size:11px;color:var(--dim)}.metric.mint .value{color:var(--mint)}.metric.blue .value{color:var(--blue)}.metric.pink .value{color:var(--pink)}.metric.gold .value{color:var(--gold)}.section{margin-top:22px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px}.section-heading h2{font-size:17px;letter-spacing:-.01em;margin:0}.section-heading small{color:var(--dim);font-size:11px}.split{display:grid;grid-template-columns:1.3fr .7fr;gap:13px}.panel{background:linear-gradient(145deg,#162743,#101d35);border:1px solid var(--edge);border-radius:18px;padding:19px;min-width:0}.panel h3{font-size:13px;margin:0 0 6px}.panel p{color:var(--dim);font-size:12px;line-height:1.55;margin:0}.targets{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:18px 0}.target{border-radius:12px;border:1px solid #355272;background:#12243d;padding:12px 6px;text-align:center}.target b{font-size:18px}.target strong{display:block;color:var(--mint);margin:6px 0 2px;font-size:17px}.target small{font-size:10px;color:var(--dim)}.callout{border-radius:12px;padding:13px;background:#0b1c31;border:1px dashed #38546c;font-size:12px;color:#c3d6eb;line-height:1.6}.donut{margin:20px auto 18px;width:155px;height:155px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--mint) 0 48.5%,#293d5c 48.5% 100%)}.donut-inner{width:122px;height:122px;border-radius:50%;background:#12223b;display:grid;place-items:center;align-content:center}.donut-inner b{font-size:26px;color:var(--mint)}.donut-inner small{color:var(--dim);font-size:10px}.center{text-align:center}.chart{width:100%;height:190px;margin-top:9px;display:block}.chart-note{font-size:11px;color:var(--dim);margin-top:8px}.bars{display:grid;gap:12px;margin:19px 0 6px}.bar-line{display:grid;grid-template-columns:70px 1fr 65px;align-items:center;gap:8px;font-size:12px;color:#d1e1f3}.rail{height:9px;background:#243550;border-radius:100px;overflow:hidden}.fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#5bb8fb,#64f1c3)}.bar-num{text-align:right;font-variant-numeric:tabular-nums}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 5px}button{border:1px solid #367e98;background:#184a60;color:#dcfff5;border-radius:11px;padding:10px 16px;cursor:pointer;font-weight:700;font-size:12px}button:hover{background:#23637d}button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#1d2f4b;border-color:#354b6a;color:#dae8f8}.footer{font-size:11px;color:#8ea1c0;margin-top:26px;line-height:1.8}.footer a{white-space:nowrap}.warning{background:#231f2b;border:1px solid #665367;color:#e8d2ec;border-radius:14px;padding:13px 16px;font-size:12px;line-height:1.7;margin-top:21px}.faint{font-size:11px;color:var(--dim)}.raw{white-space:pre-wrap;word-break:break-word;font-size:10px;max-height:250px;overflow:auto;background:#0a172b;padding:12px;border-radius:12px;color:#a7d7e6}.hide{display:none!important}
@@ -34,26 +34,26 @@
 </head>
 <body><main class="container">
 <header class="top"><div class="brand"><span class="mark">✈</span><div><strong>ORBIT</strong><small>AVIATOR · ANÁLISIS EN UN TOQUE</small></div></div><span class="live"><i class="dot" id="dot"></i><span id="connection">CONECTANDO</span></span></header>
-<section class="hero"><div><div class="eyebrow">ANALÍTICA AUTOMÁTICA · SIN IMPORTACIONES</div><h1>Aviator,<br><em>analiza en un toque.</em></h1><p class="sub">Pulsa ANALIZAR para ver directamente una referencia de multiplicador y segundos aproximados. Se basa en miles de rondas observadas; no conoce el siguiente resultado.</p></div><aside class="hero-side"><div class="side-title">RONDAS EN LA MUESTRA</div><div class="big-value" id="sample">—</div><div class="side-caption" id="last-data">Consultando datos públicos...</div></aside></section>
+<section class="hero"><div><div class="eyebrow">ANALÍTICA AUTOMÁTICA · SIN IMPORTACIONES</div><h1>Aviator,<br><em>audita el algoritmo.</em></h1><p class="sub">Comprueba qué puede deducirse del algoritmo y de las fuentes públicas. Nunca mostrará una mediana como si fuera la predicción de la próxima ronda.</p></div><aside class="hero-side"><div class="side-title">RONDAS EN LA MUESTRA</div><div class="big-value" id="sample">—</div><div class="side-caption" id="last-data">Consultando datos públicos...</div></aside></section>
 <div class="data-status"><span id="state-symbol">↻</span><span id="state-msg">Conectando con el proveedor de datos…</span></div>
 
-<section class="analysis" id="analizador" aria-label="Analizador de ronda">
-  <div class="eyebrow">✦ ORBIT · ANÁLISIS INMEDIATO</div>
-  <h2>¿Hasta cuánto podría llegar?</h2>
-  <p class="analysis-desc">Una respuesta estadística en un toque, sin escribir números. No lee el resultado secreto de tu próxima ronda.</p>
-  <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR RONDA</button>
-  <p class="analysis-note" id="analysis-note" role="status">Preparando estadísticas reales…</p>
+<section class="analysis" id="analizador" aria-label="Análisis criptográfico de Aviator">
+  <div class="eyebrow">✦ ORBIT · INVESTIGACIÓN DEL ALGORITMO</div>
+  <h2>¿Es posible conocer el próximo vuelo?</h2>
+  <p class="analysis-desc">El sistema examina lo que está disponible públicamente y distingue una señal verificable de simples estadísticas. No fabrica multiplicadores ni segundos.</p>
+  <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR ALGORITMO</button>
+  <p class="analysis-note" id="analysis-note" role="status">Preparando auditoría de las fuentes públicas…</p>
   <div class="analysis-answer" id="analysis-result" hidden aria-live="polite">
     <div class="analysis-grid">
       <div class="analysis-number">
-        <div class="analysis-label">REFERENCIA CENTRAL HISTÓRICA</div>
-        <strong class="analysis-value" id="analysis-multiplier">—</strong>
-        <div class="analysis-caption">Mediana observada, no predicción individual</div>
+        <div class="analysis-label">RESULTADO DEL PRÓXIMO VUELO</div>
+        <strong class="analysis-value" id="analysis-multiplier" style="font-size:clamp(17px,4.2vw,24px);color:#ffd6a0">NO DISPONIBLE</strong>
+        <div class="analysis-caption">No se conoce la semilla secreta anticipadamente</div>
       </div>
       <div class="analysis-number">
-        <div class="analysis-label">TIEMPO VISUAL EQUIVALENTE</div>
-        <strong class="analysis-value seconds" id="analysis-time">—</strong>
-        <div class="analysis-caption">Segundos aproximados por un modelo de ascenso</div>
+        <div class="analysis-label">DURACIÓN DE LA PRÓXIMA RONDA</div>
+        <strong class="analysis-value seconds" id="analysis-time" style="font-size:clamp(17px,4.2vw,24px);color:#ffd6a0">NO DISPONIBLE</strong>
+        <div class="analysis-caption">No hay telemetría futura auténtica</div>
       </div>
     </div>
     <div class="analysis-explain" id="analysis-explain"></div>
@@ -112,36 +112,25 @@ async function refresh(){if(loading)return;loading=true;$('refresh').disabled=tr
 $('refresh').addEventListener('click',refresh);$('source').addEventListener('click',()=>window.open('https://clashwatchdog.com/games/aviator','_blank','noopener'));
 $('technical').addEventListener('click',()=>{const d=$('debug');d.classList.toggle('hide');d.textContent=JSON.stringify(diag,null,2);$('technical').textContent=d.classList.contains('hide')?'Ver diagnóstico de conexión':'Ocultar diagnóstico';});
 
-/* ANALIZAR no genera un número aleatorio ni presume conocer la ronda siguiente.
-   La mediana y p90 son umbrales históricos; el reloj es una conversión visual
-   HIPOTÉTICA del ascenso exp(k*t), con k entre 0.055 y 0.075 por segundo.
-   No se dispone del ritmo verdadero ni de telemetría del casino específico. */
-function secondsModel(mult){return [Math.log(Math.max(1,mult))/.075,Math.log(Math.max(1,mult))/.055]}
-function secsLabel(mult){const s=secondsModel(mult);return Math.round(s[0])+'–'+Math.round(s[1])+' s'}
+/* La fuente pública entrega resultados agregados; no emite semilla secreta
+   ni las rondas en vivo de un casino concreto. No se puede derivar la próxima
+   salida del hash SHA-256 publicado. Esta auditoría NO simula pronósticos. */
 async function analyzeRound(){
- const btn=$('analyze');
- if(!latest){$('analysis-note').textContent='Consultando la muestra antes del análisis…';await refresh();}
- if(!latest||!Number.isFinite(latest.rounds)||latest.rounds<100||!Number.isFinite(latest.median)||latest.median<1){
-   $('analysis-result').hidden=true;
-   $('analysis-note').textContent='Sin muestra estadística suficiente. No es posible estimar; prueba de nuevo cuando vuelva la fuente.';
-   return;
- }
- btn.disabled=true;
- try{
-   // La estadística de la ronda futura no cambia por pulsar el botón varias veces.
-   const med=latest.median;
-   const p90=latest.p90;
-   const prob2=Number.isFinite(latest.rtp)?latest.rtp/2:48.5;
-   $('analysis-multiplier').textContent=fmt(med,2)+'×';
-   $('analysis-time').textContent=secsLabel(med);
-   $('analysis-explain').innerHTML='<strong>Interpretación:</strong> en la muestra histórica, cerca de la mitad de las rondas terminó antes de '+fmt(med,2)+'× y cerca de la mitad después.'+
-     (p90>=med?'<br><strong>Tramo amplio:</strong> aproximadamente 9 de cada 10 rondas observadas no superaron '+fmt(p90,2)+'× (equivale a '+secsLabel(p90)+' con el mismo modelo visual).':'');
-   $('analysis-prob').innerHTML='<strong>Referencia para 2×:</strong> cerca del '+fmt(prob2,1)+'% de las rondas observadas alcanzó ese objetivo, según el RTP medido a 2×.'+
-     '<br><strong>Muestra:</strong> '+Math.round(latest.rounds).toLocaleString('es-EC')+' rondas.'+
-     (latest.asOf?'<br><strong>Fecha del último registro:</strong> '+dateStr(latest.asOf)+'.':'');
-   $('analysis-warning').textContent='⚠ Esto NO predice la próxima ronda. El vuelo puede caer a 1,00× o subir mucho más. Los segundos se estiman con una curva de velocidad ilustrativa (no medida en tu casino): no son una cuenta regresiva ni la duración futura.';
+ const btn=$('analyze');btn.disabled=true;
+ $('analysis-note').textContent='Comprobando el origen de los datos públicos…';
+ try {
+   if(!loading)await refresh();
+   const n=latest?.rounds;
+   const ts=latest?.asOf;
+   $('analysis-multiplier').textContent='NO DISPONIBLE';
+   $('analysis-time').textContent='NO DISPONIBLE';
+   $('analysis-explain').innerHTML='<strong>Resultado técnico:</strong> conocer las rondas anteriores y la fórmula del juego no permite descifrar la semilla secreta del servidor. La huella SHA-256 publicada antes del vuelo es un compromiso criptográfico, no una clave para calcular el resultado.';
+   $('analysis-prob').textContent='Fuente conectada: Clash Watchdog. '+(Number.isFinite(n)?'Reporta '+Math.round(n).toLocaleString('es-EC')+' rondas en una muestra agregada. ':'No hay una muestra disponible. ')+(ts?'Registro observado: '+dateStr(ts)+'. ':'')+'Esta API no ofrece cada nueva ronda ni las semillas necesarias para anticipar resultados.';
+   $('analysis-warning').textContent='⚠ No se detectó una señal futura verificable. Ningún multiplicador ni duración que aparezcan como pronóstico estarían fundamentados en estos datos. El panel anterior mostraba siempre la mediana histórica de 1,92×: fue un error presentarla como predicción.';
    $('analysis-result').hidden=false;
-   $('analysis-note').textContent='Análisis estadístico calculado con la última muestra disponible. Pulsar de nuevo no revela resultados futuros.';
+   $('analysis-note').textContent='Auditoría completada: no hay acceso verificable al resultado futuro.';
+ } catch(e){
+   $('analysis-note').textContent='No se pudo verificar la fuente: '+e.message;
  } finally {btn.disabled=false;}
 }
 $('analyze').addEventListener('click',analyzeRound);
