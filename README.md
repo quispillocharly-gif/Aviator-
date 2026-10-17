@@ -4,15 +4,16 @@ Web estática **para GitHub Pages** que consulta automáticamente mediciones pú
 
 **Datos:** https://clashwatchdog.com/data, API JSON abierta a cualquier origen. Se consultan estadísticas históricas, no el resultado de la próxima ronda. La fuente puede reflejar una demo diferente de la mesa del usuario. Attribution: Clash Watchdog, CC BY 4.0. El proveedor declara 97% de RTP para Aviator.
 
-## Activar el enlace público en GitHub (única configuración inicial)
+## Activar el enlace público en GitHub (único paso pendiente)
 
-1. Repositorio creado: `quispillocharly-gif/Aviator-`.
-2. Sube a la raíz todo el contenido de este ZIP, conservando la carpeta `.github/workflows` y `scripts`.
-3. En **Settings > Pages > Build and deployment**, elige `Deploy from a branch`, rama `main`, carpeta `/(root)` y guarda.
-4. En **Actions** habilita los workflows si GitHub lo solicita. El respaldo actualiza `data/latest.json` cada 30 minutos (también se puede ejecutar a mano). En **Settings > Actions > General > Workflow permissions**, permite `Read and write permissions` si tu configuración bloquea los commits de Actions.
-5. Abre `https://quispillocharly-gif.github.io/Aviator-/` en Android. No se requieren credenciales ni importaciones.
+Proyecto instalado en: https://github.com/quispillocharly-gif/Aviator-
 
-La interfaz consulta el API directamente cada 30 segundos mientras está abierta. Si falla, intenta usar la última copia `data/latest.json` guardada por GitHub Actions, y finalmente una copia local anterior. Nunca inventa estadísticas, y marca las copias de respaldo como tal.
+1. Abre https://github.com/quispillocharly-gif/Aviator-/settings/pages
+2. En **Build and deployment > Source**, selecciona **GitHub Actions**.
+3. El workflow `.github/workflows/pages.yml` publicará el sitio y actualizará un respaldo estadístico dos veces por hora. Puedes revisar su ejecución en https://github.com/quispillocharly-gif/Aviator-/actions
+4. El enlace del analizador será: https://quispillocharly-gif.github.io/Aviator-/
+
+No son necesarios archivos manuales ni ingresar multiplicadores. El navegador consulta la API pública cada 30 segundos mientras está abierto. Si falla, usa el respaldo `data/latest.json` actualizado por GitHub Actions; como última opción muestra los datos locales anteriores y avisa que son antiguos.
 
 ### Importante
 
