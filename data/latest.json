@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-17T19:55:50.632904+00:00",
+  "retrievedAt": "2026-10-17T19:58:57.494402+00:00",
   "source": "https://clashwatchdog.com/data",
   "summary": {
     "data": {
@@ -48,7 +48,7 @@
     "data": {
       "game": "aviator",
       "status": "measured",
-      "lastRoundAt": "2026-10-17T19:41:23Z"
+      "lastRoundAt": "2026-10-17T19:51:24Z"
     },
     "meta": {
       "methodologyVersion": "lab-v2.0",
