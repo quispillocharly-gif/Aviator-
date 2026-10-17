@@ -1,0 +1,59 @@
+{
+  "retrievedAt": "2026-10-17T19:17:16.105071+00:00",
+  "source": "https://clashwatchdog.com/data",
+  "summary": {
+    "data": {
+      "game": {
+        "slug": "aviator",
+        "name": "Aviator",
+        "provider": "Spribe",
+        "category": "crash",
+        "fairness": "provably-fair",
+        "fairnessNote": null
+      },
+      "claim": {
+        "rtp": 0.97,
+        "source": "https://spribe.co/games/aviator",
+        "label": "provider claim"
+      },
+      "status": "measured",
+      "measurement": {
+        "rounds": 45229,
+        "rtp": 0.9620376307236508,
+        "ci95": [
+          0.952828063675872,
+          0.9712471977714295
+        ],
+        "quantiles": {
+          "p50": 1.92,
+          "p90": 9.462,
+          "p99": 98.202
+        },
+        "asOf": "2026-10-17T18:49:25Z",
+        "synthetic": false,
+        "methodologyVersion": "crashlab-v1",
+        "label": "Observed RTP @ 2x (fixed cash-out)"
+      },
+      "lastRoundAt": "2026-10-17T18:47:40Z",
+      "methodologyVersion": "lab-v2.0",
+      "pageUrl": "https://clashwatchdog.com/games/aviator"
+    },
+    "meta": {
+      "methodologyVersion": "lab-v2.0",
+      "license": "CC BY 4.0",
+      "disclaimer": "Measurements describe past rounds. Nothing here predicts future rounds."
+    }
+  },
+  "freshness": {
+    "data": {
+      "game": "aviator",
+      "status": "measured",
+      "lastRoundAt": "2026-10-17T18:47:40Z"
+    },
+    "meta": {
+      "methodologyVersion": "lab-v2.0",
+      "license": "CC BY 4.0",
+      "disclaimer": "Measurements describe past rounds. Nothing here predicts future rounds."
+    }
+  }
+}
