@@ -129,10 +129,14 @@ def main():
         previous = []
     previous = [s for s in previous if isinstance(s, dict)
                 and isinstance(s.get("n"), int)
-                and isinstance(s.get("winsAt2x"), int)
-                and s["n"] <= current["n"]]
+                and isinstance(s.get("winsAt2x"), int)]
+    if previous and current["n"] < previous[-1]["n"]:
+        print("El proveedor revisó/disminuyó el tamaño de la muestra; se reinicia solamente la ventana de auditoría.")
+        previous = []  # Jamás restar muestras incompatibles
     if not previous or current["n"] > previous[-1]["n"]:
         previous.append(current)
+    elif current["n"] == previous[-1]["n"]:
+        previous[-1] = current
     previous = previous[-720:]  # ~15 días a ritmo de 30 min
     report = audit(previous, summary, fresh)
     write(DATA / "snapshots.json", previous)
