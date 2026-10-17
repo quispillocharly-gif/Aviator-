@@ -30,6 +30,18 @@
 .advanced[open]>summary{color:#77eac7}
 @media(max-width:520px){.analysis{padding:19px 14px}.analysis-grid{gap:8px}.analysis-number{padding:13px 10px}.analysis-label{font-size:9px}.analysis-value{font-size:31px}.analysis-value.seconds{font-size:23px}}
 
+
+.audit-row{margin-top:15px;background:#07192b;border:1px solid #395773;border-radius:14px;padding:14px;line-height:1.65;font-size:12px;color:#bbd0e5}
+.audit-row h3{margin:0 0 7px;color:#ddfff8;font-size:14px}
+.audit-row .tag{display:inline-block;border-radius:9px;padding:4px 9px;background:#194663;color:#b4f8df;font-size:11px;font-weight:700}
+.audit-row.warn{border-color:#735c46;background:#231d24}
+.audit-grid{display:grid;gap:9px;grid-template-columns:1fr 1fr;margin-top:8px}
+.audit-grid strong{display:block;font-size:16px;color:#f1f7ff;margin-top:4px}
+.verify-form{display:grid;gap:8px;margin-top:12px}
+.verify-form label{font-size:12px;color:#bfd5e9}
+.verify-form input{background:#08172a;border:1px solid #35516c;border-radius:11px;color:#f3f9ff;padding:12px;font:inherit;min-width:0;width:100%}
+.verify-form button{padding:13px}
+@media(max-width:510px){.audit-grid{grid-template-columns:1fr}}
 </style>
 </head>
 <body><main class="container">
@@ -39,21 +51,21 @@
 
 <section class="analysis" id="analizador" aria-label="Análisis criptográfico de Aviator">
   <div class="eyebrow">✦ ORBIT · INVESTIGACIÓN DEL ALGORITMO</div>
-  <h2>¿Es posible conocer el próximo vuelo?</h2>
-  <p class="analysis-desc">El sistema examina lo que está disponible públicamente y distingue una señal verificable de simples estadísticas. No fabrica multiplicadores ni segundos.</p>
-  <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR ALGORITMO</button>
-  <p class="analysis-note" id="analysis-note" role="status">Preparando auditoría de las fuentes públicas…</p>
+  <h2>Laboratorio automático de Aviator</h2>
+  <p class="analysis-desc">Se actualiza con datos públicos, contrasta rondas nuevas contra el modelo y detecta desviaciones inusuales. Te da un dictamen, no una lista interminable de números.</p>
+  <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR AHORA</button>
+  <p class="analysis-note" id="analysis-note" role="status">Fuente conectada · análisis disponible tras cargar datos</p>
   <div class="analysis-answer" id="analysis-result" hidden aria-live="polite">
     <div class="analysis-grid">
       <div class="analysis-number">
-        <div class="analysis-label">RESULTADO DEL PRÓXIMO VUELO</div>
-        <strong class="analysis-value" id="analysis-multiplier" style="font-size:clamp(17px,4.2vw,24px);color:#ffd6a0">NO DISPONIBLE</strong>
-        <div class="analysis-caption">No se conoce la semilla secreta anticipadamente</div>
+        <div class="analysis-label">PROBABILIDAD OBSERVADA DE ALCANZAR 2×</div>
+        <strong class="analysis-value" id="analysis-multiplier">—</strong>
+        <div class="analysis-caption">Referencia histórica, no pronóstico del vuelo</div>
       </div>
       <div class="analysis-number">
-        <div class="analysis-label">DURACIÓN DE LA PRÓXIMA RONDA</div>
-        <strong class="analysis-value seconds" id="analysis-time" style="font-size:clamp(17px,4.2vw,24px);color:#ffd6a0">NO DISPONIBLE</strong>
-        <div class="analysis-caption">No hay telemetría futura auténtica</div>
+        <div class="analysis-label">RESULTADO DEL DETECTOR DE ANOMALÍAS</div>
+        <strong class="analysis-value seconds" id="analysis-time" style="font-size:clamp(16px,4vw,23px)">PENDIENTE</strong>
+        <div class="analysis-caption">Contraste sobre rondas nuevas verificadas</div>
       </div>
     </div>
     <div class="analysis-explain" id="analysis-explain"></div>
@@ -61,6 +73,31 @@
     <p class="analysis-warning" id="analysis-warning"></p>
   </div>
 </section>
+
+
+<section class="section">
+ <div class="panel">
+  <div class="section-heading"><h2>Laboratorio automático de evidencia</h2><small>Sin simulaciones ni apuestas</small></div>
+  <p>Este laboratorio solo puede estudiar datos ya publicados. Compara tramos nuevos de al menos 500 rondas con la probabilidad teórica de alcanzar 2×. Una alerta necesita revisión y repetición; no revela la siguiente ronda.</p>
+  <div class="audit-row" id="evidence-status" aria-live="polite">Cargando el historial automático de GitHub…</div>
+  <div class="audit-row" id="integrity-status">Consultando el registro de huellas SHA-256 de archivos diarios públicos…</div>
+  <div class="audit-row warn"><h3>Sobre la próxima ronda</h3>La próxima cifra y su duración no pueden calcularse con los datos disponibles. La semilla secreta y las semillas de jugadores no están reveladas antes del vuelo. Incluso una anomalía real en un lote pasado no identifica el resultado siguiente.</div>
+ </div>
+</section>
+<details class="advanced"><summary>Verificador criptográfico de una ronda ya finalizada (opcional)</summary>
+ <div class="panel">
+  <h3>Comprueba la semilla después del vuelo</h3>
+  <p>El juego puede mostrar el hash SHA-256 de la semilla del servidor antes de una ronda y revelar la semilla después. Esta comprobación usa SHA-256 en tu propio navegador. No permite conocer el próximo resultado; no pegues contraseñas ni datos privados.</p>
+  <div class="verify-form">
+    <label for="expected-seed-hash">Hash SHA-256 que mostró el juego antes de la ronda (64 caracteres hexadecimales)</label>
+    <input id="expected-seed-hash" autocomplete="off" spellcheck="false" placeholder="Hash SHA-256 anterior" maxlength="64">
+    <label for="revealed-seed">Semilla del servidor revelada después de la ronda</label>
+    <input id="revealed-seed" autocomplete="off" spellcheck="false" placeholder="Server Seed ya revelada">
+    <button id="verify-seed" type="button">Comprobar compromiso SHA-256</button>
+    <div id="verify-result" class="audit-row" aria-live="polite">No se han ingresado semillas.</div>
+  </div>
+ </div>
+</details>
 
 <details class="advanced"><summary>Ver estadísticas y gráficos completos (opcional)</summary>
 <section class="grid" aria-label="Estadísticas"><article class="metric mint"><div class="label">ALCANZARON 2×</div><div class="value" id="p2">—</div><div class="note">Frecuencia histórica medida</div></article><article class="metric blue"><div class="label">RTP OBSERVADO · 2×</div><div class="value" id="rtp">—</div><div class="note">Retorno histórico, no ganancia</div></article><article class="metric pink"><div class="label">MEDIANA</div><div class="value" id="median">—</div><div class="note">Mitad de las rondas a cada lado</div></article><article class="metric gold"><div class="label">PERCENTIL P90</div><div class="value" id="instant">—</div><div class="note">90% de rondas quedaron por debajo</div></article></section>
@@ -107,34 +144,97 @@ async function refresh(){if(loading)return;loading=true;$('refresh').disabled=tr
  if(!summary){const old=cacheRead();if(old?.data){summary=old.data.summary;freshness=old.data.freshness;usedBackup=true;attempts.push('Última copia local: disponible');}}
  if(!summary)throw Error('No se pudo obtener ninguna muestra real. No se muestran datos simulados.');
  const measurement=getMetric(summary);const fresh=flatten(freshness||{});const inferredFresh=extractDate(freshness)||measurement.asOf;measurement.asOf=inferredFresh;lastFetch=new Date().toISOString();diag={usedBackup,attempts,fieldMapping:measurement.paths,lastFetch,sourcePayload:summary,freshnessPayload:freshness};
- render(measurement);cacheWrite({summary,freshness});const isStale=fresh.some(o=>/stale|paused/.test(o.key)&&[true,'true',1,'1'].includes(o.value));const message=(usedBackup?'Usando último respaldo disponible. ':'Datos automáticos consultados. ')+(measurement.rounds?'Muestra: '+Math.round(measurement.rounds).toLocaleString('es-EC')+' rondas. ':'')+(inferredFresh?'Último dato registrado: '+dateStr(inferredFresh)+'.':'');setStatus(usedBackup||isStale?'error':'ok',message+(isStale?' Fuente marcada como desactualizada.':''));
+ render(measurement);cacheWrite({summary,freshness});if(Date.now()-lastAuditFetch>120000)loadAudit();const isStale=fresh.some(o=>/stale|paused/.test(o.key)&&[true,'true',1,'1'].includes(o.value));const message=(usedBackup?'Usando último respaldo disponible. ':'Datos automáticos consultados. ')+(measurement.rounds?'Muestra: '+Math.round(measurement.rounds).toLocaleString('es-EC')+' rondas. ':'')+(inferredFresh?'Último dato registrado: '+dateStr(inferredFresh)+'.':'');setStatus(usedBackup||isStale?'error':'ok',message+(isStale?' Fuente marcada como desactualizada.':''));
  }catch(e){diag={attempts,error:e.message};setStatus('error',e.message);}finally{loading=false;$('refresh').disabled=false;}}
 $('refresh').addEventListener('click',refresh);$('source').addEventListener('click',()=>window.open('https://clashwatchdog.com/games/aviator','_blank','noopener'));
 $('technical').addEventListener('click',()=>{const d=$('debug');d.classList.toggle('hide');d.textContent=JSON.stringify(diag,null,2);$('technical').textContent=d.classList.contains('hide')?'Ver diagnóstico de conexión':'Ocultar diagnóstico';});
 
-/* La fuente pública entrega resultados agregados; no emite semilla secreta
-   ni las rondas en vivo de un casino concreto. No se puede derivar la próxima
-   salida del hash SHA-256 publicado. Esta auditoría NO simula pronósticos. */
+/* Motor estadístico: transparencia antes que falso pronóstico. 
+   n eventos observados, k >=2x calculados desde RTP@2x/2.
+   La ventana incremental se forma restando dos conjuntos acumulativos. */
+let orbitAudit = null;
+let lastAuditFetch = 0;
+async function loadAudit() {
+  try {
+    const r=await fetchJSON('./data/audit.json?t='+Date.now());
+    if(r?.analysisKind!=='backward-looking statistical test')throw Error('Datos de auditoría inválidos');
+    orbitAudit=r;lastAuditFetch=Date.now();
+    const w=r.window;
+    let headline='REUNIENDO NUEVAS RONDAS';
+    let text='La prueba requiere un incremento real de al menos 500 rondas desde el inicio del seguimiento.';
+    if(w && w.rounds>=500){
+      if(r.status==='review_anomaly'){
+        headline='DESVIACIÓN ESTADÍSTICA · REVISAR';
+        text='En '+w.rounds.toLocaleString('es-EC')+' rondas nuevas, '+fmt(w.shareReached2x*100,2)+'% alcanzó 2×. Prueba exploratoria p='+w.exploratoryPValue+'. La alerta no prueba manipulación ni anticipa la ronda siguiente.';
+      }else{
+        headline='SIN DESVIACIÓN DETECTADA EN LA VENTANA';
+        text='En '+w.rounds.toLocaleString('es-EC')+' rondas nuevas, '+fmt(w.shareReached2x*100,2)+'% llegó a 2× (intervalo aproximado del 95%: '+fmt(w.ci95Reached2x[0]*100,1)+'%–'+fmt(w.ci95Reached2x[1]*100,1)+'%). Es una prueba exploratoria, no garantía.';
+      }
+    }
+    $('evidence-status').textContent='';
+    const head=document.createElement('h3');head.textContent=headline;
+    const desc=document.createElement('div');desc.textContent=text;
+    const meta=document.createElement('div');meta.className='faint';meta.textContent='Corte histórico: '+(r.lastRoundAt?dateStr(r.lastRoundAt):'desconocido')+' · Fuente: datos agregados independientes';
+    $('evidence-status').append(head,desc,meta);
+  } catch(e) {
+    orbitAudit=null;
+    $('evidence-status').textContent='Auditoría acumulativa aún no disponible. Los datos históricos siguen visibles, pero no se inventan señales.';
+  }
+}
+function renderDatasets(datasets){
+ const d=datasets?.data, arr=Array.isArray(d)?d:Array.isArray(d?.days)?d.days:Array.isArray(d?.datasets)?d.datasets:Array.isArray(d?.items)?d.items:null;
+ if(!arr||!arr.length){
+   $('integrity-status').textContent='Huellas diarias: el proveedor no entregó inventario en un formato comprobable.';
+   return;
+ }
+ const valid=arr.filter(x=>x&&typeof x==='object'&&typeof (x.sha256||x.hash||x.digest)==='string'&&/^[0-9a-f]{64}$/i.test(x.sha256||x.hash||x.digest));
+ if(!valid.length){
+   $('integrity-status').textContent='Huellas diarias disponibles, formato no reconocido para verificación automática.';
+   return;
+ }
+ const last=valid[valid.length-1];
+ $('integrity-status').textContent='Archivos diarios sellados publicados: '+valid.length+'. Último hash publicado: '+(last.sha256||last.hash||last.digest).slice(0,16)+'… Es un inventario; sin las filas originales no es posible recalcular la huella.';
+}
 async function analyzeRound(){
  const btn=$('analyze');btn.disabled=true;
- $('analysis-note').textContent='Comprobando el origen de los datos públicos…';
- try {
-   if(!loading)await refresh();
-   const n=latest?.rounds;
-   const ts=latest?.asOf;
-   $('analysis-multiplier').textContent='NO DISPONIBLE';
-   $('analysis-time').textContent='NO DISPONIBLE';
-   $('analysis-explain').innerHTML='<strong>Resultado técnico:</strong> conocer las rondas anteriores y la fórmula del juego no permite descifrar la semilla secreta del servidor. La huella SHA-256 publicada antes del vuelo es un compromiso criptográfico, no una clave para calcular el resultado.';
-   $('analysis-prob').textContent='Fuente conectada: Clash Watchdog. '+(Number.isFinite(n)?'Reporta '+Math.round(n).toLocaleString('es-EC')+' rondas en una muestra agregada. ':'No hay una muestra disponible. ')+(ts?'Registro observado: '+dateStr(ts)+'. ':'')+'Esta API no ofrece cada nueva ronda ni las semillas necesarias para anticipar resultados.';
-   $('analysis-warning').textContent='⚠ No se detectó una señal futura verificable. Ningún multiplicador ni duración que aparezcan como pronóstico estarían fundamentados en estos datos. El panel anterior mostraba siempre la mediana histórica de 1,92×: fue un error presentarla como predicción.';
+ $('analysis-note').textContent='Analizando observaciones reales y consistencia de la muestra…';
+ try{
+   if(!latest||!lastFetch || Date.now()-Date.parse(lastFetch)>45_000)await refresh();
+   if(!orbitAudit||Date.now()-lastAuditFetch>120_000)await loadAudit();
+   if(!latest||!Number.isFinite(latest.rounds)||latest.rounds<1000||!Number.isFinite(latest.rtp)) {
+     $('analysis-note').textContent='Sin muestra suficiente: el motor no crea resultados artificiales.';
+     $('analysis-result').hidden=true;return;
+   }
+   const p=latest.rtp/2;
+   $('analysis-multiplier').textContent=fmt(p,2)+'%';
+   const alert=orbitAudit?.status;
+   $('analysis-time').textContent=alert==='review_anomaly'?'REVISAR':alert==='no_statistical_flag'?'SIN ALERTA':'RECOPILANDO';
+   $('analysis-time').style.color=alert==='review_anomaly'?'#ffcf85':'#89c8ff';
+   $('analysis-explain').textContent='ANÁLISIS DE LA MUESTRA: de '+Math.round(latest.rounds).toLocaleString('es-EC')+' rondas observadas, aproximadamente '+fmt(p,2)+'% alcanzó 2×. La cifra cambia con datos nuevos, no cada vez que pulsas el botón. No es la probabilidad individual ni el resultado secreto del próximo vuelo.';
+   const w=orbitAudit?.window;
+   $('analysis-prob').textContent=w?'BLOQUE RECIENTE: '+w.rounds.toLocaleString('es-EC')+' rondas nuevas. '+fmt(w.shareReached2x*100,2)+'% alcanzó 2×. '+(alert==='review_anomaly'?'Se observó una desviación que necesita confirmación fuera de muestra.':'Sin alerta estadística con el umbral conservador usado.'):'BLOQUE RECIENTE: el seguimiento automático está reuniendo al menos 500 rondas adicionales para ejecutar la prueba de anomalías.';
+   $('analysis-warning').textContent='PRÓXIMO MULTIPLICADOR Y DURACIÓN: DESCONOCIDOS. El algoritmo usa semillas criptográficas no disponibles antes de cada ronda. No hay señal legítima de compra ni acceso al resultado futuro.';
    $('analysis-result').hidden=false;
-   $('analysis-note').textContent='Auditoría completada: no hay acceso verificable al resultado futuro.';
- } catch(e){
-   $('analysis-note').textContent='No se pudo verificar la fuente: '+e.message;
- } finally {btn.disabled=false;}
+   $('analysis-note').textContent='Análisis terminado · actualizado con la información comprobable disponible.';
+ }catch(e){$('analysis-note').textContent='No se pudo terminar el análisis: '+e.message;}
+ finally{btn.disabled=false}
 }
 $('analyze').addEventListener('click',analyzeRound);
+$('verify-seed').addEventListener('click',async ()=>{
+ const expected=$('expected-seed-hash').value.trim().toLowerCase();
+ const seed=$('revealed-seed').value;
+ if(!/^[a-f0-9]{64}$/.test(expected)||seed.length===0) {
+   $('verify-result').textContent='Introduce el hash completo y la semilla del servidor ya revelada.';return;
+ }
+ try{
+   if(!crypto?.subtle)throw Error('HTTPS/Web Crypto no disponible');
+   const raw=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(seed));
+   const actual=Array.from(new Uint8Array(raw)).map(b=>b.toString(16).padStart(2,'0')).join('');
+   $('verify-result').textContent=actual===expected?'COINCIDE: la semilla revelada corresponde al compromiso SHA-256 proporcionado. Esto NO confirma por sí solo el cálculo del multiplicador.':'NO COINCIDE: revisa espacios, mayúsculas o el hash correspondiente a esa ronda. No es prueba automática de fraude.';
+ }catch(e){$('verify-result').textContent='No se pudo verificar: '+e.message}
+});
+loadAudit();
 
-drawChart();refresh();setInterval(()=>{if(!document.hidden)refresh()},30000);
+drawChart();refresh();setInterval(()=>{if(!document.hidden)refresh()},30000);setInterval(()=>{if(!document.hidden)loadAudit()},120000);
 })();
 </script></body></html>
