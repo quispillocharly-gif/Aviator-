@@ -1,0 +1,55 @@
+name: ORBIT Aviator - Datos y GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  schedule:
+    - cron: '17,47 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "orbit-pages"
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Actualizar estadísticas independientes
+        shell: bash
+        run: |
+          python3 scripts/actualizar.py || echo "::warning::Fuente no disponible; se mantiene la última copia real."
+
+      - name: Guardar respaldo de datos cuando cambie
+        shell: bash
+        run: |
+          if [ -n "$(git status --porcelain -- data/latest.json)" ]; then
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git add data/latest.json
+            git commit -m "Actualizar estadísticas observadas de Aviator"
+            git push
+          fi
+
+      - name: Configurar GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Preparar sitio
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: '.'
+
+      - name: Publicar sitio
+        id: deployment
+        uses: actions/deploy-pages@v4
