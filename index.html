@@ -182,7 +182,7 @@ async function loadAudit() {
   }
 }
 function renderDatasets(datasets){
- const d=datasets?.data, arr=Array.isArray(d)?d:Array.isArray(d?.days)?d.days:Array.isArray(d?.datasets)?d.datasets:Array.isArray(d?.items)?d.items:null;
+ const d=datasets?.data, arr=Array.isArray(d)?d:Array.isArray(d?.days)?d.days:Array.isArray(d?.datasets)?d.datasets:Array.isArray(d?.items)?d.items:Array.isArray(d?.fingerprints)?d.fingerprints:null;
  if(!arr||!arr.length){
    $('integrity-status').textContent='Huellas diarias: el proveedor no entregó inventario en un formato comprobable.';
    return;
@@ -192,9 +192,20 @@ function renderDatasets(datasets){
    $('integrity-status').textContent='Huellas diarias disponibles, formato no reconocido para verificación automática.';
    return;
  }
- const last=valid[valid.length-1];
- $('integrity-status').textContent='Archivos diarios sellados publicados: '+valid.length+'. Último hash publicado: '+(last.sha256||last.hash||last.digest).slice(0,16)+'… Es un inventario; sin las filas originales no es posible recalcular la huella.';
+ const last=valid[0];const name=last.date||last.day||'fecha no declarada';
+ $('integrity-status').textContent='Archivos diarios sellados: '+valid.length+'. Más reciente: '+name+' · '+(Number.isFinite(Number(last.rows))?Number(last.rows).toLocaleString('es-EC')+' rondas · ':'')+'SHA-256 '+(last.sha256||last.hash||last.digest).slice(0,16)+'…. La huella está publicada, pero no podemos recalcularla sin el archivo de rondas original.';
 }
+async function updateFingerprints(){
+ try{
+   const raw=await fetchJSON(API+'datasets');renderDatasets(raw);
+ }catch(e){
+   try{const backup=await fetchJSON('./data/latest.json?ts='+Date.now());renderDatasets(backup.datasets);}
+   catch(err){$('integrity-status').textContent='Inventario diario no disponible; no se inventan huellas.'}
+ }
+}
+updateFingerprints();
+setInterval(()=>{if(!document.hidden)updateFingerprints()},3600000);
+
 async function analyzeRound(){
  const btn=$('analyze');btn.disabled=true;
  $('analysis-note').textContent='Analizando observaciones reales y consistencia de la muestra…';
