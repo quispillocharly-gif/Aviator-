@@ -1,18 +1,18 @@
 {
-  "computedAt": "2026-10-17T20:07:34.544602+00:00",
+  "computedAt": "2026-10-17T20:33:17.440627+00:00",
   "analysisKind": "backward-looking statistical test",
   "source": "Clash Watchdog: aggregated Aviator demo observations",
   "game": "aviator",
-  "rounds": 45436,
-  "lastRoundAt": "2026-10-17T20:01:33Z",
+  "rounds": 45467,
+  "lastRoundAt": "2026-10-17T20:11:32Z",
   "claimRtp": 0.97,
-  "observedRtpAt2x": 0.962232590897086,
+  "observedRtpAt2x": 0.9622803351881585,
   "ci95RtpAt2x": [
-    0.9530439590752625,
-    0.9714212227189095
+    0.9530948198582816,
+    0.9714658505180354
   ],
   "claimInsideObservedCI": true,
-  "sampleCount": 3,
+  "sampleCount": 4,
   "window": null,
   "status": "insufficient_new_rounds",
   "hasFutureSeed": false,
@@ -22,7 +22,7 @@
     "Rolling windows overlap; statistical flags are exploratory, not proof of bias.",
     "The observations may not match the casino where the user plays."
   ],
-  "roundsNeededForWindow": 419,
+  "roundsNeededForWindow": 388,
   "sourceStatus": "measured",
   "fairnessScope": "Only past-round evidence; not a future-result oracle."
 }
