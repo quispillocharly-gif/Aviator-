@@ -1,5 +1,5 @@
 {
-  "retrievedAt": "2026-10-17T19:58:57.494402+00:00",
+  "retrievedAt": "2026-10-17T20:07:34.544602+00:00",
   "source": "https://clashwatchdog.com/data",
   "summary": {
     "data": {
@@ -18,23 +18,23 @@
       },
       "status": "measured",
       "measurement": {
-        "rounds": 45382,
-        "rtp": 0.9621876514917809,
+        "rounds": 45436,
+        "rtp": 0.962232590897086,
         "ci95": [
-          0.9529935700387893,
-          0.9713817329447725
+          0.9530439590752625,
+          0.9714212227189095
         ],
         "quantiles": {
           "p50": 1.92,
-          "p90": 9.46,
-          "p99": 98.2357
+          "p90": 9.47,
+          "p99": 98.2495
         },
-        "asOf": "2026-10-17T19:43:16Z",
+        "asOf": "2026-10-17T20:03:17Z",
         "synthetic": false,
         "methodologyVersion": "crashlab-v1",
         "label": "Observed RTP @ 2x (fixed cash-out)"
       },
-      "lastRoundAt": "2026-10-17T19:41:23Z",
+      "lastRoundAt": "2026-10-17T20:01:33Z",
       "methodologyVersion": "lab-v2.0",
       "pageUrl": "https://clashwatchdog.com/games/aviator"
     },
@@ -48,7 +48,7 @@
     "data": {
       "game": "aviator",
       "status": "measured",
-      "lastRoundAt": "2026-10-17T19:51:24Z"
+      "lastRoundAt": "2026-10-17T20:01:33Z"
     },
     "meta": {
       "methodologyVersion": "lab-v2.0",
