@@ -1,28 +1,32 @@
-# ORBIT Aviator — Análisis automático de estadísticas
+# ORBIT Aviator — laboratorio independiente de resultados públicos
 
-Web estática **para GitHub Pages** que consulta automáticamente mediciones públicas independientes de Aviator. No pide archivos, multiplicadores ni conexión a la cuenta del casino.
+**Abrir la web:** https://quispillocharly-gif.github.io/Aviator-/
 
-**Datos:** https://clashwatchdog.com/data, API JSON abierta a cualquier origen. Se consultan estadísticas históricas, no el resultado de la próxima ronda. La fuente puede reflejar una demo diferente de la mesa del usuario. Attribution: Clash Watchdog, CC BY 4.0. El proveedor declara 97% de RTP para Aviator.
+**Estado:** página web publicada con GitHub Pages y automatización por GitHub Actions, sin Railway. Funciona en Android, sin archivos para importar ni datos manuales en el análisis principal.
 
-## Activar el enlace público en GitHub (único paso pendiente)
+## Qué hace realmente
 
-Proyecto instalado en: https://github.com/quispillocharly-gif/Aviator-
+1. Consulta estadísticas públicas independientes de Aviator en https://clashwatchdog.com/data (cada 30 segundos con la página abierta). Son resultados **observados en demos o mesas externas**, no una transmisión de la mesa del usuario.
+2. Mantiene copias automáticas en `data/latest.json`, `data/snapshots.json` y `data/audit.json`, actualizadas por el workflow `.github/workflows/pages.yml` dos veces por hora. El historial se crea sin que el usuario introduzca nada.
+3. Analiza incrementos comprobables de **al menos 500 rondas nuevas** y compara la proporción que llegó a 2× con el valor teórico bajo el RTP declarado de 97% (p = 0,485). Usa estadístico z y p exploratoria; señala desviaciones con umbral p < 0,001. Como las ventanas pueden solaparse, es un **detector de revisión**, no prueba concluyente de manipulación.
+4. Consulta el inventario de huellas SHA-256 de archivos diarios sellados. **No** afirma verificar esos archivos sin acceder a las filas originales.
+5. Incluye un verificador *opcional y local al navegador* del compromiso SHA-256 para **una ronda pasada**: requiere el hash publicado **antes** y la semilla revelada **después**. Este verificador no envía esas cadenas a nuestro servidor y no comprueba por sí solo el coeficiente calculado.
+6. Los tests en `tests/test_audit.py` se ejecutan antes de cada publicación automatizada.
 
-1. Abre https://github.com/quispillocharly-gif/Aviator-/settings/pages
-2. En **Build and deployment > Source**, selecciona **GitHub Actions**.
-3. El workflow `.github/workflows/pages.yml` publicará el sitio y actualizará un respaldo estadístico dos veces por hora. Puedes revisar su ejecución en https://github.com/quispillocharly-gif/Aviator-/actions
-4. El enlace del analizador será: https://quispillocharly-gif.github.io/Aviator-/
+## Límites de seguridad y honestidad de datos
 
-No son necesarios archivos manuales ni ingresar multiplicadores. El navegador consulta la API pública cada 30 segundos mientras está abierto. Si falla, usa el respaldo `data/latest.json` actualizado por GitHub Actions; como última opción muestra los datos locales anteriores y avisa que son antiguos.
+- El próximo resultado y su duración **no se conocen**: SPRIBE publica un compromiso SHA-256 y solo revela la semilla secreta después de la ronda. Utiliza SHA-512 para el resultado, junto con semillas de los jugadores. Documentación oficial: https://spribe.co/provably-fair
+- No se ha identificado un método criptográfico legítimo que permita recuperar la semilla futura a partir del hash público.
+- Clash Watchdog no entrega las filas crudas de las rondas mediante su API abierta; se obtienen por solicitud aparte. El análisis automático de la web opera sobre **estadísticas agregadas**, no sobre una secuencia de vuelos en vivo.
+- No realiza apuestas, no accede a cuentas de casinos, no utiliza información privada, no ejecuta compras ni sugiere jugar.
+- Un valor que cambia por una nueva muestra no es una señal de la siguiente ronda. Tampoco un test de anomalías convierte por sí solo los datos pasados en una predicción.
+- Si una fuente falla, el panel lo señala y mantiene la última copia respaldada; nunca simula vuelos.
 
-### Importante
+## Fuentes y licencia
 
-- **No** conecta con la cuenta del casino ni recibe el streaming completo de los vuelos.
-- No hay evidencia de que las rondas anteriores permitan pronosticar el próximo multiplicador de Aviator.
-- El gráfico de evolución indica aumento en la cantidad de rondas *de la muestra agregada*, no las rondas individuales.
-- La API está documentada públicamente, pero su esquema podría cambiar. Si faltan campos, el panel muestra `—` y permite abrir diagnóstico de conexión; no muestra números falsos.
-- Si la API o GitHub fallan, el proyecto sigue mostrando que no está conectado en vez de generar rondas simuladas.
+- [Clash Watchdog — datos y API](https://clashwatchdog.com/data). Atribución: Clash Watchdog, CC BY 4.0.
+- [Clash Watchdog — Aviator](https://clashwatchdog.com/games/aviator).
+- [SPRIBE — Provably Fair](https://spribe.co/provably-fair).
+- [GitHub Actions — ejecuciones](https://github.com/quispillocharly-gif/Aviator-/actions).
 
-## Licencias y fuentes
-
-Datos e indicadores publicados: [Clash Watchdog](https://clashwatchdog.com/data) (CC BY 4.0), [página de Aviator](https://clashwatchdog.com/games/aviator). Marca y producto original Aviator: SPRIBE.
+Proyecto separado de Differ, Rise/Fall y otras IA.
