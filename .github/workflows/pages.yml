@@ -26,6 +26,9 @@ jobs:
       - name: Descargar repositorio
         uses: actions/checkout@v4
 
+      - name: Validar motor estadístico
+        run: python3 -m unittest discover -s tests -v
+
       - name: Actualizar estadísticas independientes
         shell: bash
         run: |
