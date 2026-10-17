@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#081326"><meta name="description" content="ORBIT Aviator: estadísticas públicas de Aviator que se actualizan automáticamente. Sin carga de archivos ni apuestas.">
-<title>ORBIT · Auditoría Aviator</title>
+<title>ORBIT · Calculadora de riesgo Aviator</title>
 <style>
 :root{color-scheme:dark;--bg:#081326;--panel:#101e36;--panel2:#162743;--edge:#293c5b;--ink:#f1f7ff;--dim:#97aac9;--mint:#63f2c2;--blue:#57b8fb;--gold:#ffcf85;--pink:#d99cff}
 *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:radial-gradient(ellipse at 12% -20%,#203b65 0%,transparent 46%),radial-gradient(ellipse at 100% 17%,#1b2750 0%,transparent 32%),var(--bg);color:var(--ink);font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif}a{color:var(--blue)}button{font:inherit}.container{max-width:1090px;margin:auto;padding:20px 17px 72px}.top{display:flex;justify-content:space-between;gap:10px;align-items:center;margin-bottom:28px}.brand{display:flex;align-items:center;gap:12px}.mark{width:45px;height:45px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#4fe3c7,#6a9bff);box-shadow:0 8px 35px #48a6d53d;color:#071729;font-size:24px;transform:rotate(-4deg)}.brand strong{font-size:21px;letter-spacing:.12em}.brand small{display:block;color:var(--dim);font-size:10px;letter-spacing:.21em;margin-top:2px}.live{font-size:11px;letter-spacing:.07em;color:#c1d4ee;display:flex;align-items:center;gap:7px;border:1px solid var(--edge);padding:9px 11px;border-radius:25px;background:#0f1e34}.dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:#96a9c1}.dot.ok{background:var(--mint);box-shadow:0 0 0 5px #50f2bf20}.dot.error{background:#ffa6a6}.hero{display:grid;grid-template-columns:1.3fr .7fr;gap:20px;align-items:end;margin-bottom:20px}.eyebrow{color:var(--mint);font-size:11px;text-transform:uppercase;letter-spacing:.21em;font-weight:750}.hero h1{font-size:clamp(30px,5.8vw,55px);margin:10px 0 12px;line-height:1.09;letter-spacing:-.04em}.hero h1 em{color:var(--mint);font-style:normal}.sub{font-size:14px;line-height:1.65;color:var(--dim);max-width:580px;margin:0}.hero-side{border:1px solid var(--edge);border-radius:18px;padding:18px;background:#12223a}.side-title{font-size:11px;letter-spacing:.17em;color:var(--dim);font-weight:700}.big-value{font-size:31px;font-weight:780;margin:7px 0 0;font-variant-numeric:tabular-nums;letter-spacing:-.03em}.side-caption{font-size:12px;color:var(--dim);line-height:1.5}.data-status{display:flex;align-items:center;gap:9px;border:1px solid var(--edge);padding:11px 14px;border-radius:14px;background:#111f36;font-size:12px;color:#b5c7df;margin-bottom:20px}.data-status strong{color:#f1f7ff}.rotate{animation:rotate 1s linear infinite}@keyframes rotate{to{transform:rotate(360deg)}}.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.metric{border:1px solid var(--edge);border-radius:17px;background:linear-gradient(155deg,#192c49,#102039);padding:17px;min-height:132px}.metric .label{color:#a9bdd9;font-size:11px;font-weight:630;letter-spacing:.05em}.metric .value{font-size:clamp(21px,2.9vw,30px);font-weight:800;margin:16px 0 7px;letter-spacing:-.04em;font-variant-numeric:tabular-nums}.metric .note{font-size:11px;color:var(--dim)}.metric.mint .value{color:var(--mint)}.metric.blue .value{color:var(--blue)}.metric.pink .value{color:var(--pink)}.metric.gold .value{color:var(--gold)}.section{margin-top:22px}.section-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:0 0 12px}.section-heading h2{font-size:17px;letter-spacing:-.01em;margin:0}.section-heading small{color:var(--dim);font-size:11px}.split{display:grid;grid-template-columns:1.3fr .7fr;gap:13px}.panel{background:linear-gradient(145deg,#162743,#101d35);border:1px solid var(--edge);border-radius:18px;padding:19px;min-width:0}.panel h3{font-size:13px;margin:0 0 6px}.panel p{color:var(--dim);font-size:12px;line-height:1.55;margin:0}.targets{display:grid;grid-template-columns:repeat(5,1fr);gap:9px;margin:18px 0}.target{border-radius:12px;border:1px solid #355272;background:#12243d;padding:12px 6px;text-align:center}.target b{font-size:18px}.target strong{display:block;color:var(--mint);margin:6px 0 2px;font-size:17px}.target small{font-size:10px;color:var(--dim)}.callout{border-radius:12px;padding:13px;background:#0b1c31;border:1px dashed #38546c;font-size:12px;color:#c3d6eb;line-height:1.6}.donut{margin:20px auto 18px;width:155px;height:155px;border-radius:50%;display:grid;place-items:center;background:conic-gradient(var(--mint) 0 48.5%,#293d5c 48.5% 100%)}.donut-inner{width:122px;height:122px;border-radius:50%;background:#12223b;display:grid;place-items:center;align-content:center}.donut-inner b{font-size:26px;color:var(--mint)}.donut-inner small{color:var(--dim);font-size:10px}.center{text-align:center}.chart{width:100%;height:190px;margin-top:9px;display:block}.chart-note{font-size:11px;color:var(--dim);margin-top:8px}.bars{display:grid;gap:12px;margin:19px 0 6px}.bar-line{display:grid;grid-template-columns:70px 1fr 65px;align-items:center;gap:8px;font-size:12px;color:#d1e1f3}.rail{height:9px;background:#243550;border-radius:100px;overflow:hidden}.fill{height:100%;border-radius:100px;background:linear-gradient(90deg,#5bb8fb,#64f1c3)}.bar-num{text-align:right;font-variant-numeric:tabular-nums}.actions{display:flex;flex-wrap:wrap;gap:9px;margin:17px 0 5px}button{border:1px solid #367e98;background:#184a60;color:#dcfff5;border-radius:11px;padding:10px 16px;cursor:pointer;font-weight:700;font-size:12px}button:hover{background:#23637d}button:disabled{opacity:.45;cursor:not-allowed}button.secondary{background:#1d2f4b;border-color:#354b6a;color:#dae8f8}.footer{font-size:11px;color:#8ea1c0;margin-top:26px;line-height:1.8}.footer a{white-space:nowrap}.warning{background:#231f2b;border:1px solid #665367;color:#e8d2ec;border-radius:14px;padding:13px 16px;font-size:12px;line-height:1.7;margin-top:21px}.faint{font-size:11px;color:var(--dim)}.raw{white-space:pre-wrap;word-break:break-word;font-size:10px;max-height:250px;overflow:auto;background:#0a172b;padding:12px;border-radius:12px;color:#a7d7e6}.hide{display:none!important}
@@ -42,39 +42,59 @@
 .verify-form input{background:#08172a;border:1px solid #35516c;border-radius:11px;color:#f3f9ff;padding:12px;font:inherit;min-width:0;width:100%}
 .verify-form button{padding:13px}
 @media(max-width:510px){.audit-grid{grid-template-columns:1fr}}
+
+/* respuesta en un toque — nunca señal de apuesta */
+.analysis-unknown{background:#0a1d32;border:1px solid #557083;border-radius:15px;padding:17px;margin-bottom:17px}
+.analysis-unknown strong{display:block;color:#ffdda3;font-size:clamp(19px,4.8vw,27px);margin:7px 0;font-weight:850;letter-spacing:.015em}
+.time-answer{margin-top:16px;margin-bottom:0}
+.prob-title{font-size:15px;color:#e4f7ff;margin:0 0 11px}
+.prob-head,.prob-row{display:grid;grid-template-columns:1fr .92fr 1.08fr;gap:7px;align-items:center}
+.prob-head{padding:0 11px 8px;color:#a7bdd3;font-weight:750;font-size:10px;letter-spacing:.06em}
+.prob-head span:not(:first-child){text-align:right}
+.prob-list{display:grid;gap:7px}
+.prob-row{border:1px solid #314d68;background:#0b2036;border-radius:12px;padding:12px 10px;min-height:54px}
+.prob-target{font-weight:850;font-size:18px;color:#f2fcff}
+.prob-reach{color:#8af2ce;font-weight:850;font-size:20px;text-align:right;font-variant-numeric:tabular-nums}
+.prob-bust{color:#ffccab;font-weight:750;font-size:19px;text-align:right;font-variant-numeric:tabular-nums}
+.prob-row.highlight{border-color:#6faacc;background:#16354b}
+.prob-row .subline{font-size:10px;color:#adc5d8;display:block;font-weight:400}
+#odds-method{margin-top:14px}
+@media(max-width:520px){.prob-reach{font-size:17px}.prob-bust{font-size:16px}.prob-target{font-size:16px}.prob-row{padding:11px 8px}}
+
 </style>
 </head>
 <body><main class="container">
 <header class="top"><div class="brand"><span class="mark">✈</span><div><strong>ORBIT</strong><small>AVIATOR · ANÁLISIS EN UN TOQUE</small></div></div><span class="live"><i class="dot" id="dot"></i><span id="connection">CONECTANDO</span></span></header>
-<section class="hero"><div><div class="eyebrow">ANALÍTICA AUTOMÁTICA · SIN IMPORTACIONES</div><h1>Aviator,<br><em>audita el algoritmo.</em></h1><p class="sub">Comprueba qué puede deducirse del algoritmo y de las fuentes públicas. Nunca mostrará una mediana como si fuera la predicción de la próxima ronda.</p></div><aside class="hero-side"><div class="side-title">RONDAS EN LA MUESTRA</div><div class="big-value" id="sample">—</div><div class="side-caption" id="last-data">Consultando datos públicos...</div></aside></section>
+<section class="hero"><div><div class="eyebrow">ANALÍTICA AUTOMÁTICA · SIN IMPORTACIONES</div><h1>Aviator,<br><em>riesgo en un toque.</em></h1><p class="sub">Pulsa ANALIZAR y compara cuánto suele alcanzar cada multiplicador. Una probabilidad no revela el próximo vuelo.</p></div><aside class="hero-side"><div class="side-title">RONDAS EN LA MUESTRA</div><div class="big-value" id="sample">—</div><div class="side-caption" id="last-data">Consultando datos públicos...</div></aside></section>
 <div class="data-status"><span id="state-symbol">↻</span><span id="state-msg">Conectando con el proveedor de datos…</span></div>
 
-<section class="analysis" id="analizador" aria-label="Análisis criptográfico de Aviator">
-  <div class="eyebrow">✦ ORBIT · INVESTIGACIÓN DEL ALGORITMO</div>
-  <h2>Laboratorio automático de Aviator</h2>
-  <p class="analysis-desc">Se actualiza con datos públicos, contrasta rondas nuevas contra el modelo y detecta desviaciones inusuales. Te da un dictamen, no una lista interminable de números.</p>
-  <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR AHORA</button>
-  <p class="analysis-note" id="analysis-note" role="status">Fuente conectada · análisis disponible tras cargar datos</p>
-  <div class="analysis-answer" id="analysis-result" hidden aria-live="polite">
-    <div class="analysis-grid">
-      <div class="analysis-number">
-        <div class="analysis-label">PROBABILIDAD OBSERVADA DE ALCANZAR 2×</div>
-        <strong class="analysis-value" id="analysis-multiplier">—</strong>
-        <div class="analysis-caption">Referencia histórica, no pronóstico del vuelo</div>
-      </div>
-      <div class="analysis-number">
-        <div class="analysis-label">RESULTADO DEL DETECTOR DE ANOMALÍAS</div>
-        <strong class="analysis-value seconds" id="analysis-time" style="font-size:clamp(16px,4vw,23px)">PENDIENTE</strong>
-        <div class="analysis-caption">Contraste sobre rondas nuevas verificadas</div>
-      </div>
-    </div>
-    <div class="analysis-explain" id="analysis-explain"></div>
-    <div class="analysis-explain" id="analysis-prob"></div>
-    <p class="analysis-warning" id="analysis-warning"></p>
-  </div>
+<section class="analysis" id="analizador" aria-label="Análisis de riesgo de Aviator">
+ <div class="eyebrow">✦ ORBIT · ANÁLISIS DIRECTO</div>
+ <h2>¿Hasta dónde puede llegar?</h2>
+ <p class="analysis-desc">Pulsa para ver qué tan frecuente es que un vuelo alcance 1,5×, 2×, 3× y otros objetivos. Son probabilidades, no resultados anticipados.</p>
+ <button class="analyze-button" id="analyze" type="button">✈ ANALIZAR</button>
+ <p class="analysis-note" id="analysis-note" role="status">Listo para mostrar las probabilidades conocidas.</p>
+ <div class="analysis-answer" id="analysis-result" hidden aria-live="polite">
+   <div class="analysis-unknown">
+     <div class="analysis-label">¿A CUÁNTO LLEGARÁ EL PRÓXIMO AVIÓN?</div>
+     <strong id="next-answer">NO SE PUEDE SABER</strong>
+     <div class="analysis-caption">No existe una señal verificable de la próxima ronda con los datos disponibles.</div>
+   </div>
+   <h3 class="prob-title">Probabilidad de alcanzar cada multiplicador</h3>
+   <div class="prob-head"><span>META</span><span>LLEGA</span><span>CAE ANTES</span></div>
+   <div class="prob-list" id="quick-odds"></div>
+   <div class="analysis-explain" id="odds-method"></div>
+   <div class="analysis-unknown time-answer">
+     <div class="analysis-label">¿CUÁNTOS SEGUNDOS DEBO ESPERAR?</div>
+     <strong>NO SE PUEDE CALCULAR</strong>
+     <div class="analysis-caption">La fuente no registra los segundos ni la trayectoria de tu partida. El tiempo no puede deducirse de la probabilidad de caída.</div>
+   </div>
+   <div class="analysis-explain" id="analysis-prob"></div>
+   <p class="analysis-warning" id="analysis-warning">Una mayor probabilidad de llegar a un objetivo bajo no garantiza ganar ni elimina la ventaja del casino.</p>
+ </div>
 </section>
 
-
+<details class="advanced"><summary>Investigación técnica y detección de anomalías (opcional)</summary>
 <section class="section">
  <div class="panel">
   <div class="section-heading"><h2>Laboratorio automático de evidencia</h2><small>Sin simulaciones ni apuestas</small></div>
@@ -84,6 +104,7 @@
   <div class="audit-row warn"><h3>Sobre la próxima ronda</h3>La próxima cifra y su duración no pueden calcularse con los datos disponibles. La semilla secreta y las semillas de jugadores no están reveladas antes del vuelo. Incluso una anomalía real en un lote pasado no identifica el resultado siguiente.</div>
  </div>
 </section>
+</details>
 <details class="advanced"><summary>Verificador criptográfico de una ronda ya finalizada (opcional)</summary>
  <div class="panel">
   <h3>Comprueba la semilla después del vuelo</h3>
@@ -206,29 +227,45 @@ async function updateFingerprints(){
 updateFingerprints();
 setInterval(()=>{if(!document.hidden)updateFingerprints()},3600000);
 
+// Theory: if the standard crash distribution with 97% RTP applies,
+// P(X >= target) is approximately 0.97 / target.
+// Observed data from this feed directly validates ONLY the 2x point.
+const QUICK_TARGETS=[1.2,1.5,2,3,5,10];
+function makeOddsRows(model=.97){
+ const rows=QUICK_TARGETS.map(x=>({target:x,chance:100*Math.max(0,Math.min(1,model/x))}));
+ const el=$('quick-odds');
+ el.textContent='';
+ for(const q of rows){
+   const row=document.createElement('div');row.className='prob-row'+(q.target===2?' highlight':'');
+   const a=document.createElement('div');a.className='prob-target';a.textContent=fmt(q.target,q.target%1?1:0)+'×';
+   const b=document.createElement('div');b.className='prob-reach';b.textContent=fmt(q.chance,1)+'%';
+   const c=document.createElement('div');c.className='prob-bust';c.textContent=fmt(100-q.chance,1)+'%';
+   row.append(a,b,c);el.append(row);
+ }
+}
 async function analyzeRound(){
  const btn=$('analyze');btn.disabled=true;
- $('analysis-note').textContent='Analizando observaciones reales y consistencia de la muestra…';
+ $('analysis-note').textContent='Revisando fuente y preparando las probabilidades…';
  try{
-   if(!latest||!lastFetch || Date.now()-Date.parse(lastFetch)>45_000)await refresh();
-   if(!orbitAudit||Date.now()-lastAuditFetch>120_000)await loadAudit();
-   if(!latest||!Number.isFinite(latest.rounds)||latest.rounds<1000||!Number.isFinite(latest.rtp)) {
-     $('analysis-note').textContent='Sin muestra suficiente: el motor no crea resultados artificiales.';
-     $('analysis-result').hidden=true;return;
-   }
-   const p=latest.rtp/2;
-   $('analysis-multiplier').textContent=fmt(p,2)+'%';
-   const alert=orbitAudit?.status;
-   $('analysis-time').textContent=alert==='review_anomaly'?'REVISAR':alert==='no_statistical_flag'?'SIN ALERTA':'RECOPILANDO';
-   $('analysis-time').style.color=alert==='review_anomaly'?'#ffcf85':'#89c8ff';
-   $('analysis-explain').textContent='ANÁLISIS DE LA MUESTRA: de '+Math.round(latest.rounds).toLocaleString('es-EC')+' rondas observadas, aproximadamente '+fmt(p,2)+'% alcanzó 2×. La cifra cambia con datos nuevos, no cada vez que pulsas el botón. No es la probabilidad individual ni el resultado secreto del próximo vuelo.';
-   const w=orbitAudit?.window;
-   $('analysis-prob').textContent=w?'BLOQUE RECIENTE: '+w.rounds.toLocaleString('es-EC')+' rondas nuevas. '+fmt(w.shareReached2x*100,2)+'% alcanzó 2×. '+(alert==='review_anomaly'?'Se observó una desviación que necesita confirmación fuera de muestra.':'Sin alerta estadística con el umbral conservador usado.'):'BLOQUE RECIENTE: el seguimiento automático está reuniendo al menos 500 rondas adicionales para ejecutar la prueba de anomalías.';
-   $('analysis-warning').textContent='PRÓXIMO MULTIPLICADOR Y DURACIÓN: DESCONOCIDOS. El algoritmo usa semillas criptográficas no disponibles antes de cada ronda. No hay señal legítima de compra ni acceso al resultado futuro.';
+   // Fetch best effort only. A broken API must not prevent showing the
+   // clearly-labelled 97% RTP mathematical model.
+   if(!latest || !lastFetch || Date.now()-Date.parse(lastFetch)>60000)await refresh();
+   makeOddsRows(.97);
+   const sampleOK=latest&&Number.isFinite(latest.rounds)&&latest.rounds>0&&Number.isFinite(latest.rtp);
+   const observed=sampleOK?latest.rtp/2:null;
+   $('odds-method').textContent='BASE DEL CÁLCULO: modelo matemático de Aviator con RTP declarado de 97% (probabilidad ≈ 0,97 ÷ objetivo). No representa una predicción ronda por ronda. La muestra independiente comprueba solamente el objetivo de 2×, no los otros multiplicadores.';
+   $('analysis-prob').textContent=sampleOK
+     ?'COMPARACIÓN CON DATOS REALES: '+fmt(observed,2)+'% de '+Math.round(latest.rounds).toLocaleString('es-EC')+' rondas observadas alcanzó 2×, frente al 48,5% del modelo. '+(latest.asOf?'Última observación: '+dateStr(latest.asOf)+'. ':'')+'Es una muestra de otra fuente, no necesariamente del casino que estás viendo.'
+     :'NO HAY DATOS NUEVOS: las probabilidades mostradas corresponden solo al modelo teórico de 97% RTP, no a observaciones actualizadas.';
    $('analysis-result').hidden=false;
-   $('analysis-note').textContent='Análisis terminado · actualizado con la información comprobable disponible.';
- }catch(e){$('analysis-note').textContent='No se pudo terminar el análisis: '+e.message;}
- finally{btn.disabled=false}
+   $('analysis-note').textContent='Análisis de riesgo listo. No hay pronóstico verificable del próximo vuelo.';
+ }catch(e){
+   makeOddsRows(.97);
+   $('analysis-result').hidden=false;
+   $('analysis-prob').textContent='La fuente externa no respondió. Se muestra únicamente el modelo teórico de RTP 97%.';
+   $('odds-method').textContent='Probabilidades de referencia ≈ 97% ÷ multiplicador, sin acceso a resultados futuros.';
+   $('analysis-note').textContent='Modelo matemático disponible; datos externos no confirmados.';
+ }finally{btn.disabled=false}
 }
 $('analyze').addEventListener('click',analyzeRound);
 $('verify-seed').addEventListener('click',async ()=>{
